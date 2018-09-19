@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php
+  $user = $_GET["user"];
+  $file = $_GET["file"];
+
+?><!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -53,7 +57,10 @@
             <div class="card-body">
               <h3 class="card-title">College work</h3>
               <div class="form-group">
-                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" >The quick brown fox jumps over the lazy dog</textarea>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="15" >
+                    <?php
+                      echo file_get_contents("files/".$user."/".$file.".txt");
+                    ?> </textarea>
               </div>
               <button type="button" class="btn btn-success">Save</button>
               <button type="button" class="btn btn-warning">Discard</button>
