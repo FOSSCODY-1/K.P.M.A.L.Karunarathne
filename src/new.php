@@ -1,5 +1,4 @@
 <?php
-	include 'connect.php';
 	include 'user.php';
 ?>
 
@@ -55,9 +54,8 @@
 
 				<div class="col-lg-9">
 					<div class="card mt-4">
-						<img class="card-img-top img-fluid" src="http://placehold.it/900x400" alt="">
 						<div class="card-body">
-							<form action="./save.php" method="post">
+							<form action="./save.php?user=test" method="post">
 								<div class="form-group">
 									<input type="text" class="form-control" name="title" value="Title">
 									<p><p>

@@ -1,5 +1,4 @@
 <?php
-	include 'connect.php';
 	include 'user.php';
 	$user = $_GET["user"];
 	$file = $_GET["file"];
@@ -53,7 +52,6 @@
 
 				<div class="col-lg-9">
 					<div class="card mt-4">
-						<img class="card-img-top img-fluid" src="http://placehold.it/900x400" alt="">
 						<div class="card-body">
 							<h3 class="card-title">
 							<?php
@@ -69,6 +67,10 @@
 											$fh = fopen("files/".$user."/".$file, 'r');
 											$text = fread($fh, 10000);
 											echo nl2br($text);
+											echo "<p>
+											<a href=\"./edit.php?user=".$user."&file=".$file."\" class=\"btn btn-primary\" role=\"button\" aria-pressed=\"true\">Edit</a>
+											<a href=\"./delete.php?user=".$user."&file=".$file."\" class=\"btn btn-danger\" role=\"button\" aria-pressed=\"true\">Delete</a>
+											";
 										?> 
 									</p>
 							</div>

@@ -5,8 +5,10 @@
 -->
 
 <?php
+    include "connect.php";
     session_start();
-    //Sample code for skipping user registratin process for now
+    
+    //Sample user for skipping user registration process for now
     $_SESSION['user'] = 'test';
     $_SESSION['name'] = 'Test user';
 ?>
