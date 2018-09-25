@@ -1,16 +1,11 @@
-<?php
-	include 'connect.php';
-	include 'user.php';
-?>
+<?php include 'user.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<title>
-			Webpad
-		</title>
+		<title>Webpad</title>
 		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/item.css" rel="stylesheet">
 	</head>
@@ -63,7 +58,6 @@
 								$text = fread($fh, 250);
 								echo "
 									<div class=\"card mt-4\">
-										<img class=\"card-img-top img-fluid\" src=\"http://placehold.it/900x400\" >
 										<div class=\"card-body\">
 											<h3 class=\"card-title\">".$title."</h3>
 											<p class=\"card-text\">".nl2br($text).

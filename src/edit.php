@@ -1,5 +1,4 @@
 <?php
-	include 'connect.php';
 	include 'user.php';
 	$user = $_GET["user"];
 	$file = $_GET["file"];
@@ -54,7 +53,6 @@
 
 				<div class="col-lg-9">
 					<div class="card mt-4">
-						<img class="card-img-top img-fluid" src="http://placehold.it/900x400" alt="">
 						<div class="card-body">
 							<h3 class="card-title">
 							<?php
@@ -64,16 +62,21 @@
 							echo $row[0];
 							?>
 							</h3>
-							<div class="form-group">
-									<textarea class="form-control" id="exampleFormControlTextarea1" rows="15" >
+							<form action="./save.php?user=test&file=test" method="post">
+								<div class="form-group">
+									<textarea class="form-control" id="exampleFormControlTextarea1" rows="15" name="body">
 										<?php
 											echo file_get_contents("files/".$user."/".$file);
 										?> 
 									</textarea>
-							</div>
-							<button type="button" class="btn btn-success">Save</button>
-							<button type="button" class="btn btn-warning">Discard</button>
-							<button type="button" class="btn btn-danger">Delete</button>
+									<p><p>
+									<button type="submit" class="btn btn-success">Save</button>
+									<a href="./browse.php" class="btn btn-warning" role="button">Discard</a>
+									<?php
+										echo "<a href=\"./delete.php?user=".$user."&file=".$file."\" class=\"btn btn-danger\" role=\"button\">Delete</a>";
+									?>
+								</div>
+							</form>
 						</div>
 					</div>
 					<!-- /.card -->
