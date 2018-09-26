@@ -1,37 +1,38 @@
 <?php
 	include 'user.php';
 
-    if (isset($_POST['title'])) {
+    if ($_GET['method']=='new') {
         //New file
         $title = htmlspecialchars($_POST['title']);
         $body  = htmlspecialchars($_POST['body']);
-        $user = htmlspecialchars($_GET['user']);        
-        $file = preg_replace('/\s*/', '', $title);
-        // convert the string to all lowercase
-        $file = strtolower($file).".txt";
 
-        $f = fopen("./files/".$user."/".$file, "w");
-        fwrite($f, $body);
+        $username = htmlspecialchars($_GET['username']);   
+
+        $filename = preg_replace('/\s*/', '', $title);
+        // convert the string to all lowercase
+        $filename = strtolower($filename).".txt";
+
+        $file = fopen("files/$username/$filename", "w");
+        fwrite($file, $body);
         
-        $sql = "insert into notes values (\"$user\",\"$file\",\"$title\");";
-        $result = mysqli_query($con, $sql);
+        $query = "INSERT INTO notes VALUES ('$username','$filename', '$title');";
+        $result = mysqli_query($connection, $query);
         
         header("Location: browse.php");
-        //Redirect to browse.php
     }
-    else {
+    else if ($_GET['method']=='old') {
         //Save file
         $body  = htmlspecialchars($_POST['body']);
 
-        $user = htmlspecialchars($_GET['user']);
-        $file = htmlspecialchars($_GET['file']);
+        $username = htmlspecialchars($_GET['username']);
+        $filename = htmlspecialchars($_GET['filename']);
 
-        echo "save file";
-        echo $body;
-        echo $user;
-        echo $file;
+        $file = fopen("files/$username/$filename", "w");
+        fwrite($file, $body);
 
-        //Save data to file
-        //Redirect to browse.php
+        header("Location: browse.php");
+    }
+    else {
+        echo "Error!";
     }
 ?>

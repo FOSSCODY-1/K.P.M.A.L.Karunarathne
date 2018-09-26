@@ -1,7 +1,7 @@
 <?php
 	include 'user.php';
-	$user = $_GET["user"];
-	$file = $_GET["file"];
+	$username = $_GET["username"];
+	$filename = $_GET["filename"];
 ?>
 
 <!DOCTYPE html>
@@ -39,13 +39,13 @@
 				<div class="col-lg-3">
 					<h1 class="my-4">My notes</h1>
 					<div class="list-group">
-						<?php
-							$sql="SELECT filename,title FROM notes";
-							$result=mysqli_query($con,$sql);
-							while ($row=mysqli_fetch_array($result,MYSQLI_NUM)) {
-									echo "<a href=view.php?user=".$_SESSION["user"]."&file=".$row[0]." class=\"list-group-item\">".$row[1]."</a>";
+					<?php
+							$query = "SELECT username,filename,title FROM notes WHERE username='$username'";
+							$result = mysqli_query($connection, $query);
+							while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
+    							echo "<a href=view.php?username=$row[0]&filename=$row[1]' class='list-group-item'>$row[2]</a>";
 							}
-							?>
+						?>
 						<a href="new.php" class="btn btn-md btn-info" role="button" aria-pressed="true">+ New note</a>
 					</div>
 				</div>
@@ -56,24 +56,28 @@
 						<div class="card-body">
 							<h3 class="card-title">
 							<?php
-							$titleQuery="SELECT title FROM notes where filename=\"".$file."\"";
-							$result=mysqli_query($con,$titleQuery);
-							$row=mysqli_fetch_array($result, MYSQLI_NUM);
-							echo $row[0];
+								$titleQuery = "SELECT title FROM notes WHERE filename='$filename'";
+								$result = mysqli_query($connection, $titleQuery);
+								$row = mysqli_fetch_array($result, MYSQLI_NUM);
+								echo $row[0];
 							?>
 							</h3>
-							<form action="./save.php?user=test&file=test" method="post">
+							<?php
+								echo "<form action='save.php?username=$username&filename=$filename&method=old' method='post'>";
+							?>
 								<div class="form-group">
-									<textarea class="form-control" id="exampleFormControlTextarea1" rows="15" name="body">
-										<?php
-											echo file_get_contents("files/".$user."/".$file);
-										?> 
-									</textarea>
+									<?php
+										$file = fopen("files/$username/$filename", 'r');
+										$text = fread($file, 10000);
+										echo "<textarea class='form-control' id='exampleFormControlTextarea1' rows='15' name='body'>";
+										echo $text;
+										echo '</textarea>';
+									?>
 									<p><p>
 									<button type="submit" class="btn btn-success">Save</button>
 									<a href="./browse.php" class="btn btn-warning" role="button">Discard</a>
 									<?php
-										echo "<a href=\"./delete.php?user=".$user."&file=".$file."\" class=\"btn btn-danger\" role=\"button\">Delete</a>";
+										echo "<a href='./delete.php?username=$username&filename=$filename' class='btn btn-danger' role='button'>Delete</a>";
 									?>
 								</div>
 							</form>

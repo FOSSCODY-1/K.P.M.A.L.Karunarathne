@@ -50,60 +50,54 @@
 
 				<div class="col-lg-9">
 					<div class="card mt-4">
+						<form class="form-horizontal" method='post' action='action.php?check=register'>
+							<fieldset>
+								<!-- Form Name -->
+								<legend></legend>
 
-<form class="form-horizontal" method='post' action='action.php?check=register'>
-<fieldset>
-
-<!-- Form Name -->
-<legend></legend>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="name">Name</label>  
-  <div class="col-md-4">
-  <input id="name" name="name" type="text" placeholder="John Doe" class="form-control input-md" required="">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="username">Username</label>  
-  <div class="col-md-4">
-  <input id="username" name="username" type="text" placeholder="john_doe" class="form-control input-md" required="">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="email">Email</label>  
-  <div class="col-md-4">
-  <input id="email" name="email" type="text" placeholder="johndoe@example.com" class="form-control input-md" required="">
-    
-  </div>
-</div>
-
-<!-- Password input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="password">Password</label>
-  <div class="col-md-4">
-    <input id="password" name="password" type="password" placeholder="" class="form-control input-md" required="">
-    
-  </div>
-</div>
-
-<!-- Button (Double) -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="save"></label>
-  <div class="col-md-8">
-    <button id="save" name="save" class="btn btn-success">Register</button>
-    <button id="clear" name="clear" class="btn btn-warning">Reset</button>
-  </div>
-</div>
-
-</fieldset>
-</form>
+								<!-- Text input-->
+								<div class="form-group">
+									<label class="col-md-4 control-label" for="name">Name</label>  
+									<div class="col-md-4">
+										<input id="name" name="name" type="text" placeholder="John Doe" class="form-control input-md" required="">
+									</div>
+								</div>
+						
+								<!-- Text input-->
+								<div class="form-group">
+									<label class="col-md-4 control-label" for="username">Username</label>  
+									<div class="col-md-4">
+										<input id="username" name="username" type="text" placeholder="john_doe" class="form-control input-md" required="">   
+									</div>
+								</div>
+						
+								<!-- Text input-->
+								<div class="form-group">
+									<label class="col-md-4 control-label" for="email">Email</label>  
+									<div class="col-md-4">
+										<input id="email" name="email" type="text" placeholder="johndoe@example.com" class="form-control input-md" required="">
+									</div>
+								</div>
+						
+								<!-- Password input-->
+								<div class="form-group">
+									<label class="col-md-4 control-label" for="password">Password</label>
+									<div class="col-md-4">
+										<input id="password" name="password" type="password" placeholder="" class="form-control input-md" required="">
+									</div>
+								</div>
+						
+								<!-- Button (Double) -->What is the equivalent of Ctrl + K + F and Ctrl + K + D on Windows in Visual Studio for formatting, or "beautifying" code in the Visual Studio Code editor?
+								<div class="form-group">
+									<label class="col-md-4 control-label" for="save"></label>
+									<div class="col-md-8">
+										<button id="save" name="save" class="btn btn-success">Register</button>
+										<button id="clear" name="clear" class="btn btn-warning">Reset</button>
+									</div>
+								</div>
+						
+							</fieldset>
+						</form>
 
 					</div>
 					<!-- /.card -->

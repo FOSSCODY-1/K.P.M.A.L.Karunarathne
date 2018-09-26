@@ -49,43 +49,38 @@
 
 				<div class="col-lg-9">
 					<div class="card mt-4">
+					<form class="form-horizontal" action="./action.php?check=login" method="post">
+						<fieldset>
 
-<form class="form-horizontal" action="./action.php?check=login" method="post">
-<fieldset>
+							<!-- Form Name -->
+							<legend></legend>
 
-<!-- Form Name -->
-<legend></legend>
+							<!-- Text input-->
+							<div class="form-group">
+  								<label class="col-md-4 control-label" for="username">Username</label>
+  								<div class="col-md-4">
+  									<input id="username" name="username" type="text" class="form-control input-md" required="">
+  								</div>
+							</div>
 
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="username">Username</label>  
-  <div class="col-md-4">
-  <input id="username" name="username" type="text" class="form-control input-md" required="">
-    
-  </div>
-</div>
+							<!-- Password input-->
+							<div class="form-group">
+  								<label class="col-md-4 control-label" for="password">Password</label>
+  								<div class="col-md-4">
+   									<input id="password" name="password" type="password" class="form-control input-md" required="">
+  								</div>
+							</div>
 
-<!-- Password input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="password">Password</label>
-  <div class="col-md-4">
-    <input id="password" name="password" type="password" class="form-control input-md" required="">
-    
-  </div>
-</div>
-
-<!-- Button (Double) -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="save"></label>
-  <div class="col-md-8">
-    <button id="save" name="save" class="btn btn-success">Log in</button>
-    <button id="clear" name="clear" class="btn btn-warning">Reset</button>
-  </div>
-</div>
-
-</fieldset>
-</form>
-
+							<!-- Button (Double) -->
+							<div class="form-group">
+  								<label class="col-md-4 control-label" for="save"></label>
+	  							<div class="col-md-8">
+    								<button id="save" name="save" class="btn btn-success">Log in</button>
+    								<button id="clear" name="clear" class="btn btn-warning">Reset</button>
+	  							</div>
+							</div>
+						</fieldset>
+					</form>
 					</div>
 					<!-- /.card -->
 					<p><p>

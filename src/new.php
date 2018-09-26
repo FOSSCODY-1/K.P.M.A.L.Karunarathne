@@ -40,13 +40,13 @@
 				<div class="col-lg-3">
 					<h1 class="my-4">My notes</h1>
 					<div class="list-group">
-						<?php
-							$sql="SELECT filename,title FROM notes";
-							$result=mysqli_query($con,$sql);
-							while ($row=mysqli_fetch_array($result,MYSQLI_NUM)) {
-									echo "<a href=edit.php?user=".$_SESSION["user"]."&file=".$row[0]." class=\"list-group-item\">".$row[1]."</a>";
+					<?php
+							$query = "SELECT username,filename,title FROM notes WHERE username='$username'";
+							$result = mysqli_query($connection, $query);
+							while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
+    							echo "<a href='view.php?username=$row[0]&filename=$row[1]' class='list-group-item'>$row[2]</a>";
 							}
-							?>
+						?>
 						<button type="button" class="btn btn-md btn-info">+ New note</button>
 					</div>
 				</div>
@@ -55,7 +55,9 @@
 				<div class="col-lg-9">
 					<div class="card mt-4">
 						<div class="card-body">
-							<form action="./save.php?user=test" method="post">
+							<?php
+								echo "<form action='save.php?username=$username&method=new' method='post'>";
+							?>
 								<div class="form-group">
 									<label class="col-mt-4 control-label" for="title">Title</label>  
 									<input type="text" class="form-control" name="title">

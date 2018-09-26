@@ -1,11 +1,15 @@
-<?php include 'user.php'; ?>
+<?php
+	include 'user.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<title>Webpad</title>
+		<title>
+			Webpad
+		</title>
 		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/item.css" rel="stylesheet">
 	</head>
@@ -27,20 +31,19 @@
 				</div>
 			</div>
 		</nav>
-
 		<!-- Page Content -->
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3">
 					<h1 class="my-4">My notes</h1>
 					<div class="list-group">
-							<?php
-								$sql="SELECT filename,title FROM notes";
-								$result=mysqli_query($con,$sql);
-								while ($row=mysqli_fetch_array($result,MYSQLI_NUM)) {
-									echo "<a href=view.php?user=".$_SESSION["user"]."&file=".$row[0]." class=\"list-group-item\">".$row[1]."</a>";
-								}
-							?>
+					<?php
+							$query = "SELECT username,filename,title FROM notes WHERE username='$username'";
+							$result = mysqli_query($connection, $query);
+							while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
+    							echo "<a href='view.php?username=$row[0]&filename=$row[1]' class='list-group-item'>$row[2]</a>";
+							}
+						?>
 							<a href="new.php" class="btn btn-md btn-info" role="button" aria-pressed="true">+ New note</a>
 					</div>
 				</div>
@@ -48,23 +51,20 @@
 
 				<div class="col-lg-9">
 						<?php
-							$sql="SELECT username,filename,title FROM notes";
-							$result=mysqli_query($con,$sql);
-							while ($row=mysqli_fetch_array($result,MYSQLI_NUM)) {
-								$user = $row[0];
-								$file = $row[1];
-								$title = $row[2];
-								$fh = fopen("files/".$user."/".$file, 'r');
-								$text = fread($fh, 250);
-								echo "
-									<div class=\"card mt-4\">
-										<div class=\"card-body\">
-											<h3 class=\"card-title\">".$title."</h3>
-											<p class=\"card-text\">".nl2br($text).
-											"...</p>
-											<a href=\"./view.php?user=".$user."&file=".$file."\" class=\"btn btn-info\" role=\"button\" aria-pressed=\"true\">Read more</a>
-											<a href=\"./edit.php?user=".$user."&file=".$file."\" class=\"btn btn-primary\" role=\"button\" aria-pressed=\"true\">Edit</a>
-											<a href=\"./delete.php?user=".$user."&file=".$file."\" class=\"btn btn-danger\" role=\"button\" aria-pressed=\"true\">Delete</a>
+							$query = "SELECT username,filename,title FROM notes where username='$username'";
+							$result = mysqli_query($connection, $query);
+							while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
+    							$title = $row[2];
+    							$file = fopen("files/$row[0]/$row[1]", 'r');
+    							$text = fread($file, 250);
+    							echo "
+									<div class='card mt-4'>
+										<div class='card-body'>
+											<h3 class='card-title'>$row[2]</h3>
+											<p class='card-text'>".nl2br($text)."</p>
+											<a href='./view.php?username=$row[0]&filename=$row[1]' class='btn btn-info' role='button' aria-pressed='true'>Read more</a>
+											<a href='./edit.php?username=$row[0]&filename=$row[1]' class='btn btn-primary' role='button' aria-pressed='true'>Edit</a>
+											<a href='./delete.php?username=$row[0]&filename=$row[1]' class='btn btn-danger' role='button' aria-pressed='true'>Delete</a>
 										</div>
 									</div>";
 							}
