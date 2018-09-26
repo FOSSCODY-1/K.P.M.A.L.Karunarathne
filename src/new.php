@@ -44,7 +44,7 @@
 							$sql="SELECT filename,title FROM notes";
 							$result=mysqli_query($con,$sql);
 							while ($row=mysqli_fetch_array($result,MYSQLI_NUM)) {
-									echo "<a href=editor.php?user=".$_SESSION["user"]."&file=".$row[0]." class=\"list-group-item\">".$row[1]."</a>";
+									echo "<a href=edit.php?user=".$_SESSION["user"]."&file=".$row[0]." class=\"list-group-item\">".$row[1]."</a>";
 							}
 							?>
 						<button type="button" class="btn btn-md btn-info">+ New note</button>
@@ -57,9 +57,11 @@
 						<div class="card-body">
 							<form action="./save.php?user=test" method="post">
 								<div class="form-group">
-									<input type="text" class="form-control" name="title" value="Title">
+									<label class="col-mt-4 control-label" for="title">Title</label>  
+									<input type="text" class="form-control" name="title">
 									<p><p>
-									<textarea class="form-control" id="exampleFormControlTextarea1" rows="15" name="body">Body</textarea>
+									<label class="col-mt-4 control-label" for="title">Body</label>  
+									<textarea class="form-control" id="exampleFormControlTextarea1" rows="15" name="body"></textarea>
 									<p><p>
 									<button type="submit" class="btn btn-success">Save</button>
 									<a href="./browse.php" class="btn btn-warning" role="button">Discard</a>

@@ -7,8 +7,12 @@
 <?php
     include "connect.php";
     session_start();
+    ob_start();
     
     //Sample user for skipping user registration process for now
-    $_SESSION['user'] = 'test';
-    $_SESSION['name'] = 'Test user';
+    if (!isset($_SESSION)) {
+        header('Location: ./login.php');
+    }
+    //$_SESSION['user'] = 'test';
+    //$_SESSION['name'] = 'Test user';
 ?>
