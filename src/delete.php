@@ -1,16 +1,18 @@
 <?php
     include 'user.php';
 
-    $user = $_GET["user"];
-    $file = $_GET["file"];
+    $username = $_GET["username"];
+    $filename = $_GET["filename"];
 	
-    if ($_SESSION['user'] != $user) {
-        echo "Unauthorized action!";
+    if ($_SESSION['username'] != $username) {
+        echo "Unauthorized action";
         exit();
     }
 
-    $sql="delete from notes where username=\"$user\" and filename=\"$file\"";
-    unlink("files/$user/$file");
-    $result = mysqli_query($con, $sql);
+    $query="DELETE FROM notes WHERE username='$username' AND filename='$filename'";
+
+    unlink("files/$username/$filename");
+    $result = mysqli_query($connection, $query);
+    
     header("Location: browse.php");
 ?>
