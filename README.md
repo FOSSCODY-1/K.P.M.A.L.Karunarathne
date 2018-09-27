@@ -5,8 +5,8 @@ Webpad is a free online notepad in your web browser. With Webpad you can create 
 
 # Installation
 ## Prerequisites
-* XAMPP/WAMP or any other LAMPP stack
-or
+* XAMPP/WAMP or any other LAMPP stack  
+*or*  
 1. Apache2
 2. PHP 5.0+
 3. MySQL/MariaDB
@@ -29,7 +29,7 @@ A live demo of Webpad is hosted on:
 
 
 # Contribution
-If you want to contribute to this project, go ahead! Fork it and give it a try.
+If you want to contribute to this project, go ahead! Fork it and give it a try.  
 Any optimizations, improvements or new features are welcome! 
 
 ## Todo
