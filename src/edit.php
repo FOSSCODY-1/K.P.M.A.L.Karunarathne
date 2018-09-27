@@ -52,7 +52,7 @@
 							$query = "SELECT username,filename,title FROM notes WHERE username='$username'";
 							$result = mysqli_query($connection, $query);
 							while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
-    							echo "<a href=view.php?username=$row[0]&filename=$row[1]' class='list-group-item'>$row[2]</a>";
+    							echo "<a href='view.php?username=$row[0]&filename=$row[1]' class='list-group-item'>$row[2]</a>";
 							}
 						?>
 						<a href="new.php" class="btn btn-md btn-info" role="button" aria-pressed="true">+ New note</a>
