@@ -1,4 +1,9 @@
+<!--
+    Manages database connection
+-->
+
 <?php
+    //mysqli_connect("DATABASE_HOST","DATABASE_USERNAME","DATABASE_PASSWORD","DATABASE_NAME")
     $connection = mysqli_connect("localhost","root","","webpad");
     
     if (mysqli_connect_errno()) {

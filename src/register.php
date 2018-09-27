@@ -1,3 +1,8 @@
+<!--
+	Login interface
+	Login/register functionality is provided by action.php
+-->
+
 <?php
 	include 'connect.php';
 	session_start();

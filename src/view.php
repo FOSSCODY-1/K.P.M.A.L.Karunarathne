@@ -1,8 +1,14 @@
+<!--
+	Shows the complete note
+-->
+
+
 <?php
 	include 'user.php';
 	$username = $_GET["username"];
 	$filename = $_GET["filename"];
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>

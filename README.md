@@ -4,6 +4,7 @@
 Webpad is a free online notepad in your web browser. With Webpad you can create notes (ideas, to-do list, links, or any other plain text) that you would like to write just in a web browser online.
 
 # Installation
+
 ## Prerequisites
 * XAMPP/WAMP or any other LAMPP stack    
 *or*  
@@ -34,6 +35,7 @@ Any optimizations, improvements or new features are welcome!
 
 ## Todo
 * More secure login/registration system
+* Protect from SQL injection
 * Handling notes with some kind of a markup standard and allow users to edit notes with a WYSIWYG editor.
 * Pagination in note browser and sidebar
 * Ability to reset passwords for users

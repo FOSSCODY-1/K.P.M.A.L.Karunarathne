@@ -1,15 +1,20 @@
+<!--
+    Responsible for creating new notes or editing existing notes
+-->
+
 <?php
 	include 'user.php';
 
     if ($_GET['method']=='new') {
-        //New file
+        //Create a new file
         $title = htmlspecialchars($_POST['title']);
         $body  = htmlspecialchars($_POST['body']);
 
         $username = htmlspecialchars($_GET['username']);   
 
+        // Generate a suitable filename using the title
         $filename = preg_replace('/\s*/', '', $title);
-        // convert the string to all lowercase
+        // Convert the string to all lowercase
         $filename = strtolower($filename).".txt";
 
         $file = fopen("files/$username/$filename", "w");
@@ -21,7 +26,7 @@
         header("Location: browse.php");
     }
     else if ($_GET['method']=='old') {
-        //Save file
+        //Save into existing file
         $body  = htmlspecialchars($_POST['body']);
 
         $username = htmlspecialchars($_GET['username']);
@@ -31,8 +36,5 @@
         fwrite($file, $body);
 
         header("Location: browse.php");
-    }
-    else {
-        echo "Error!";
     }
 ?>

@@ -1,3 +1,9 @@
+<!--
+	Provides an interface to create a new note
+	Note creation functionality is provided by save.php
+	Todo: Limit the maximum length of note title and body
+-->
+
 <?php
 	include 'user.php';
 ?>
