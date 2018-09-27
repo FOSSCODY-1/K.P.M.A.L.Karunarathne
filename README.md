@@ -26,6 +26,12 @@ Follow these steps to get a copy of Webpad running on your local web server
 # Demo
 A live demo of Webpad is hosted on: 
 
+### Sample account for testing
+~~~~
+Username: john_doe
+Password: john_doe
+~~~~
+
 # Screenshots
 ### Note browser  
 ![Note browser](screenshots/browser_full.png?raw=true)  
