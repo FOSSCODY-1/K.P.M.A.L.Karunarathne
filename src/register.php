@@ -92,7 +92,7 @@
 									</div>
 								</div>
 						
-								<!-- Button (Double) -->What is the equivalent of Ctrl + K + F and Ctrl + K + D on Windows in Visual Studio for formatting, or "beautifying" code in the Visual Studio Code editor?
+								<!-- Button (Double) -->
 								<div class="form-group">
 									<label class="col-md-4 control-label" for="save"></label>
 									<div class="col-md-8">
