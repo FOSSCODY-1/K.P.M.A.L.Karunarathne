@@ -27,19 +27,19 @@ Follow these steps to get a copy of Webpad running on your local web server
 A live demo of Webpad is hosted on: 
 
 # Screenshots
-###Note browser  
+### Note browser  
 ![Note browser](screenshots/browser_full.png?raw=true)  
-###Note browser(Empty)  
+### Note browser(Empty)  
 ![Note browser(Empty)](screenshots/browser_empty.png?raw=true)  
-###Note viewer  
+### Note viewer  
 ![Note viewer](screenshots/view.png?raw=true)  
-###Creating a new note  
+### Creating a new note  
 ![New note](screenshots/new.png?raw=true)  
-###Editing an existing note  
+### Editing an existing note  
 ![Edit note](screenshots/edit.png?raw=true)  
-###User registration page  
+### User registration page  
 ![Register](screenshots/register.png?raw=true)  
-###Note browser (mobile view)  
+### Note browser (mobile view)  
 ![Note browser (Mobile view)](screenshots/browser_full.png?raw=true)  
 
 
