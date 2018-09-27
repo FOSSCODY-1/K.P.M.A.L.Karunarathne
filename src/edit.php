@@ -1,3 +1,8 @@
+<!--
+	Porvides an interface for editing notes
+	Note saving functionality is provided by save.php
+-->
+
 <?php
 	include 'user.php';
 	$username = $_GET["username"];
@@ -39,7 +44,11 @@
 				<div class="col-lg-3">
 					<h1 class="my-4">My notes</h1>
 					<div class="list-group">
-					<?php
+					<!--
+					Note sidebar
+					Shows only titles of notes
+					-->
+						<?php
 							$query = "SELECT username,filename,title FROM notes WHERE username='$username'";
 							$result = mysqli_query($connection, $query);
 							while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
@@ -56,6 +65,7 @@
 						<div class="card-body">
 							<h3 class="card-title">
 							<?php
+								// Get the title of the note
 								$titleQuery = "SELECT title FROM notes WHERE filename='$filename'";
 								$result = mysqli_query($connection, $titleQuery);
 								$row = mysqli_fetch_array($result, MYSQLI_NUM);

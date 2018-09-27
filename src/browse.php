@@ -1,3 +1,9 @@
+<!-- 
+	Note browser/explorer
+	Shows current user's notes. If the note is too long shows only part of it
+	Let users edit, delete or view the full note, or create a new note
+-->
+
 <?php
 	include 'user.php';
 ?>
@@ -35,6 +41,10 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3">
+				<!--
+					Note sidebar
+					Shows only titles of notes
+				-->
 					<h1 class="my-4">My notes</h1>
 					<div class="list-group">
 					<?php
@@ -55,7 +65,8 @@
 							$result = mysqli_query($connection, $query);
 							while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
     							$title = $row[2];
-    							$file = fopen("files/$row[0]/$row[1]", 'r');
+								$file = fopen("files/$row[0]/$row[1]", 'r');
+								// Only display up to 250 characters
     							$text = fread($file, 250);
     							echo "
 									<div class='card mt-4'>
