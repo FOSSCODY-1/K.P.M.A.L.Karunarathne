@@ -40,7 +40,7 @@ A live demo of Webpad is hosted on:
 ### User registration page  
 ![Register](screenshots/register.png?raw=true)  
 ### Note browser (mobile view)  
-![Note browser (Mobile view)](screenshots/browser_full.png?raw=true)  
+![Note browser (Mobile view)](screenshots/mobile_browser.png?raw=true)  
 
 
 # Contribution
