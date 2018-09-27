@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 19, 2018 at 07:01 PM
+-- Generation Time: Sep 27, 2018 at 02:27 PM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -34,6 +34,16 @@ CREATE TABLE `notes` (
   `title` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `notes`
+--
+
+INSERT INTO `notes` (`username`, `filename`, `title`) VALUES
+('john', 'avenueroad.txt', 'Avenue Road'),
+('john_doe', 'nullamvelegestasmi.txt', 'Nullam vel egestas mi'),
+('john_doe', 'aliquamsemlibero,blanditacmiid,ullamcorperbibendumpurus.txt', 'Aliquam sem libero, blandit ac mi id, ullamcorper bibendum purus'),
+('john_doe', 'duisnonsagittisurna,nonfaucibusnunc.txt', ' Duis non sagittis urna, non faucibus nunc');
+
 -- --------------------------------------------------------
 
 --
@@ -44,6 +54,14 @@ CREATE TABLE `user` (
   `username` varchar(16) NOT NULL,
   `password` varchar(16) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`username`, `password`) VALUES
+('john', 'john'),
+('john_doe', 'john_doe');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
