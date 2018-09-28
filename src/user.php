@@ -1,7 +1,7 @@
 <!--
 Checks if user is logged in or not.
 If not, direct to login.php
-If yes, then conntinue without interruption
+If yes, then continue without interruption
 -->
 
 <?php

@@ -1,6 +1,6 @@
 <!--
 Authenticate users or register new users
-Gets data with POST method from login.php and register.php
+Gets data from login.php and register.php
 -->
 
 <?php
