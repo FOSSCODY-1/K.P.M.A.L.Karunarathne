@@ -1,5 +1,5 @@
 <!--
-    Responsible for creating new notes or editing existing notes
+Responsible for creating new notes or editing existing notes
 -->
 
 <?php

@@ -1,5 +1,5 @@
 <!--
-	Shows the complete note
+Shows the complete note
 -->
 
 

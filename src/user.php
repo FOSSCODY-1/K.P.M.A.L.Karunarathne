@@ -1,7 +1,7 @@
 <!--
-	Checks if user is logged in or not.
-    If not, direct to login.php
-    If yes, then conntinue without interruption
+Checks if user is logged in or not.
+If not, direct to login.php
+If yes, then continue without interruption
 -->
 
 <?php
@@ -12,6 +12,6 @@
         header('Location: ./login.php');
     }
     else {
-        $username = $_SESSION['username'];
+        $current_user = $_SESSION['username'];
     }
 ?>

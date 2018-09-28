@@ -1,13 +1,18 @@
 <!--
-	Login interface
-	Login/register functionality is provided by action.php
+Login interface
+Functionality is provided by action.php
 -->
 
 <?php
 	include 'connect.php';
 	session_start();
+	
+	// If current user is not the owner of the note which is going to be deleted, abort
+    if (isset($_SESSION['username'])) {
+		echo "Already logged in!";
+		exit();
+	}
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">

@@ -1,7 +1,7 @@
 <!-- 
-	Note browser/explorer
-	Shows current user's notes. If the note is too long shows only part of it
-	Let users edit, delete or view the full note, or create a new note
+Note browser
+Shows current user's notes. If the note is too long shows only part of it
+Let users edit, delete or view the full note, or create a new note
 -->
 
 <?php
@@ -48,7 +48,7 @@
 					<h1 class="my-4">My notes</h1>
 					<div class="list-group">
 					<?php
-							$query = "SELECT username,filename,title FROM notes WHERE username='$username'";
+							$query = "SELECT username,filename,title FROM notes WHERE username='$current_user'";
 							$result = mysqli_query($connection, $query);
 							while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
     							echo "<a href='view.php?username=$row[0]&filename=$row[1]' class='list-group-item'>$row[2]</a>";
@@ -61,7 +61,7 @@
 
 				<div class="col-lg-9">
 						<?php
-							$query = "SELECT username,filename,title FROM notes where username='$username'";
+							$query = "SELECT username,filename,title FROM notes where username='$current_user'";
 							$result = mysqli_query($connection, $query);
 							while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
     							$title = $row[2];

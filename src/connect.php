@@ -1,5 +1,5 @@
 <!--
-    Manages database connection
+Manages database connection
 -->
 
 <?php

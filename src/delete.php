@@ -1,5 +1,5 @@
 <!--
-    Responsible for deleting notes
+Delete notes
 -->
 
 <?php
@@ -9,8 +9,8 @@
     $filename = $_GET["filename"];
     
     // If current user is not the owner of the note which is going to be deleted, abort
-    if ($_SESSION['username'] != $username) {
-        echo "Unauthorized action";
+    if ($current_user != $username) {
+        echo "Unauthorized action!";
         exit();
     }
 
