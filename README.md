@@ -61,7 +61,7 @@ Password: john_doe
 
 ## Contribution
 If you want to contribute to this project, go ahead! Fork it and give it a try.  
-Report issues to GitHub Issue Tracker.  
+Please report issues to GitHub Issue Tracker.  
 Send your contributions as pull requests.  
 Any optimizations, improvements or new features are welcome!   
 
