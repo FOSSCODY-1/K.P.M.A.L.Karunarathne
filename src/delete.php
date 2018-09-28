@@ -1,9 +1,10 @@
-<!--
-Delete notes
--->
-
 <?php
-    include 'user.php';
+    // Delete notes
+	@ob_start();
+	session_start();
+	
+	include_once 'connect.php';
+	include_once 'user.php';
 
     $username = $_GET["username"];
     $filename = $_GET["filename"];

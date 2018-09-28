@@ -1,9 +1,11 @@
-<!--
-Responsible for creating new notes or editing existing notes
--->
-
 <?php
-	include 'user.php';
+	// Save notes or create new notes
+
+	@ob_start();
+	session_start();
+	
+	include_once 'connect.php';
+	include_once 'user.php';
 
     if ($_GET['method']=='new') {
         //Create a new file

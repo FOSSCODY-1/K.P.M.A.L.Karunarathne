@@ -1,10 +1,12 @@
-<!--
-Shows the complete note
--->
-
-
 <?php
-	include 'user.php';
+	// Shows complete note
+
+	@ob_start();
+	session_start();
+	
+	include_once 'connect.php';
+	include_once 'user.php';
+
 	$username = $_GET["username"];
 	$filename = $_GET["filename"];
 ?>

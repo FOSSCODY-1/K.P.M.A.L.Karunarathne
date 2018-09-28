@@ -1,17 +1,17 @@
-<!--
-Login interface
-Functionality is provided by action.php
--->
-
 <?php
-	include 'connect.php';
+	//Register interface
+	//Functionality is provided by action.php
+
+	@ob_start();
 	session_start();
 	
-	// If current user is not the owner of the note which is going to be deleted, abort
+	include_once 'connect.php';
+
+    // If current user is not the owner of the note which is going to be deleted, abort
     if (isset($_SESSION['username'])) {
-		echo "Already logged in!";
-		exit();
-	}
+        echo "Already logged in!";
+        exit();
+    }
 ?>
 
 <!DOCTYPE html>

@@ -1,13 +1,8 @@
-<!--
-Checks if user is logged in or not.
-If not, direct to login.php
-If yes, then continue without interruption
--->
+<?php        
+    // Checks if user is logged in or not.
+    // If not, direct to login.php
+    // If yes, then continue without interruption
 
-<?php
-    include "connect.php";
-    session_start();
-    
     if (!isset($_SESSION['username'])) {
         header('Location: ./login.php');
     }

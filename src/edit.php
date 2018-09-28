@@ -1,10 +1,13 @@
-<!--
-Provides an interface for editing notes
-Note saving functionality is provided by save.php
--->
-
 <?php
-	include 'user.php';
+	// Provides an interface for editing notes
+	// Note saving functionality is provided by save.php
+
+	@ob_start();
+	session_start();
+	
+	include_once 'connect.php';
+	include_once 'user.php';
+
 	$username = $_GET["username"];
 	$filename = $_GET["filename"];
   

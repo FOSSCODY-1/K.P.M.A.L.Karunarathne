@@ -1,11 +1,13 @@
-<!-- 
-Note browser
-Shows current user's notes. If the note is too long shows only part of it
-Let users edit, delete or view the full note, or create a new note
--->
-
 <?php
-	include 'user.php';
+	//Note browser
+	//Shows current user's notes. If the note is too long shows only part of it
+	//Let users edit, delete or view the full note, or create a new note
+
+	@ob_start();
+	session_start();
+	
+	include_once 'connect.php';
+	include_once 'user.php';
 ?>
 
 <!DOCTYPE html>

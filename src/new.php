@@ -1,11 +1,11 @@
-<!--
-Provides an interface to create a new note
-Note creation functionality is provided by save.php
-Todo: Limit the maximum length of note title and body
--->
-
 <?php
-	include 'user.php';
+	// Interface for creating new notes
+
+	@ob_start();
+	session_start();
+	
+	include_once 'connect.php';
+	include_once 'user.php';
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +47,7 @@ Todo: Limit the maximum length of note title and body
 					<h1 class="my-4">My notes</h1>
 					<div class="list-group">
 					<?php
-							$query = "SELECT username,filename,title FROM notes WHERE username='$username'";
+							$query = "SELECT username,filename,title FROM notes WHERE username='$current_user'";
 							$result = mysqli_query($connection, $query);
 							while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
     							echo "<a href='view.php?username=$row[0]&filename=$row[1]' class='list-group-item'>$row[2]</a>";
@@ -62,7 +62,7 @@ Todo: Limit the maximum length of note title and body
 					<div class="card mt-4">
 						<div class="card-body">
 							<?php
-								echo "<form action='save.php?username=$username&method=new' method='post'>";
+								echo "<form action='save.php?username=$current_user&method=new' method='post'>";
 							?>
 								<div class="form-group">
 									<label class="col-mt-4 control-label" for="title">Title</label>  
