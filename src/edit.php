@@ -1,12 +1,18 @@
 <!--
-	Porvides an interface for editing notes
-	Note saving functionality is provided by save.php
+Provides an interface for editing notes
+Note saving functionality is provided by save.php
 -->
 
 <?php
 	include 'user.php';
 	$username = $_GET["username"];
 	$filename = $_GET["filename"];
+  
+    // If current user is not the owner of the note which is going to be edited, abort
+    if ($current_user != $username) {
+        echo "Unauthorized action";
+        exit();
+    }
 ?>
 
 <!DOCTYPE html>
