@@ -34,7 +34,7 @@ Follow these steps to get a copy of Webpad running on your local web server
 6. That's it!
 
 ## Demo
-A live demo of Webpad is hosted on: 
+A live demo of Webpad is hosted [here](https://webpad-anjulalk.000webhostapp.com/)
 
 ### Sample account for testing
 ~~~~
