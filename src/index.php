@@ -1,6 +1,12 @@
 <?php
-    //user.php checks if a user is logged in. If not directed to login.php
-    include "user.php";
-    //Otherwise direct to browse.php
+	@ob_start();
+	session_start();
+	
+	include_once 'connect.php';
+    
+    //user.php directs if user is not logged in
+    include_once 'user.php';
+
+    //Otherwise,
     header("Location: ./browse.php");
 ?>

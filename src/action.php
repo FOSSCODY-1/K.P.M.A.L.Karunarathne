@@ -1,11 +1,12 @@
-<!--
-Authenticate users or register new users
-Gets data from login.php and register.php
--->
-
 <?php
-	include 'connect.php';
+	// Authenticate users or register new users
+	// Gets data from login.php and register.php
+
+	@ob_start();
 	session_start();
+	
+	include_once 'connect.php';
+	include_once 'user.php';
 
 	if (isset($_GET) && $_GET['check'] == 'login') {
 		$username = mysqli_real_escape_string($connection, $_POST['username']);
@@ -19,7 +20,7 @@ Gets data from login.php and register.php
 		// If only 1 row in the result then username and password match
 		if (mysqli_num_rows($result) == 1) {
 			$_SESSION['username'] = $username;
-			header("location: index.php");
+			header("Location: index.php");
 		}
 		else {
 			//Todo: Warn user that the username and password don't match
@@ -31,12 +32,11 @@ Gets data from login.php and register.php
 
 		// Add to database
 		$query = "INSERT INTO user VALUES ('$username', '$password')";
-		echo $query;
 		mysqli_query($connection, $query);
 
 		//Create a folder to store notes
 		mkdir("files/$username");
 		
-		header("location: login.php");
+		header("Location: login.php");
 	}
 ?>
