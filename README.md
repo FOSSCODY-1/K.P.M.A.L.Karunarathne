@@ -61,7 +61,9 @@ Password: john_doe
 
 ## Contribution
 If you want to contribute to this project, go ahead! Fork it and give it a try.  
-Any optimizations, improvements or new features are welcome! 
+Report issues to GitHub Issue Tracker.  
+Send your contributions as pull requests.  
+Any optimizations, improvements or new features are welcome!   
 
 ### Todo
 * Secure login/registration system
@@ -69,3 +71,5 @@ Any optimizations, improvements or new features are welcome!
 * Pagination in note browser
 * Administrator panel
 
+## License
+This project is maintained under the GNU General Public License v3.0
